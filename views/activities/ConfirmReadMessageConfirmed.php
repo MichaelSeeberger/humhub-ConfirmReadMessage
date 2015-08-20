@@ -1,0 +1,18 @@
+<?php
+/**
+ * ConfirmReadMessageConfirmed.php
+ * Created by: Michael Seeberger
+ * Date: 18.08.15
+ * Time: 21:22
+ */
+?>
+
+<?php $this->beginContent('application.modules_core.activity.views.activityLayout', array('activity' => $activity)); ?>
+<?php
+
+echo Yii::t('ConfirmReadMessageModule.views_activities_ConfirmReadMessageConfirmed', '{userName} confirmed the {message}.', array(
+    '{userName}' => '<strong>' . CHtml::encode($user->displayName) . '</strong>',
+    '{message}' => ActivityModule::formatOutput($target->getContentTitle())
+));
+?>
+<?php $this->endContent(); ?>

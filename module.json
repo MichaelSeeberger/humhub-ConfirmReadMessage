@@ -1,0 +1,10 @@
+{
+  "id": "polls",
+  "name": "Confirmable Message",
+  "description": "Simple messaging system for spaces that allows confirmation",
+  "keywords": ["message", "confirm", "confirmation"],
+  "version": "0.0.1",
+  "humhub": {
+    "minVersion": "0.11"
+  }
+}
