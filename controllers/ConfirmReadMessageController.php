@@ -45,6 +45,7 @@ class ConfirmReadMessageController extends ContentContainerController
 
 		if ($theMessage->validate()) {
 			$theMessage->save();
+			$theMessage->confirm();
 			$this->renderJson(array('wallEntryId' => $theMessage->content->getFirstWallEntryId()));
 		} else {
 			$this->renderJson(array('errors' => $theMessage->getErrors()), false);
