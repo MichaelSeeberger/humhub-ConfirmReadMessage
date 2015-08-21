@@ -1,5 +1,5 @@
 # humhub-ConfirmReadMessage
-This is a module for HumHub that enables you to post messages that the users in the space to confirm this message as read.
+This is a module for HumHub that enables you to post messages that other users in the space can confirm as read.
 
 ## Features
 
