@@ -53,9 +53,4 @@ class ConfigurationController extends Controller
 
         $this->render('index', array('model' => $form));
     }
-
-    public static function markCreatorAsUnread()
-    {
-        return HSetting::Get('markCreatorAsRead', 'ConfirmReadMessage') != "0";
-    }
 }
