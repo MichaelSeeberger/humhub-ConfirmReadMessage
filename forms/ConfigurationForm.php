@@ -8,19 +8,19 @@
  */
 class ConfigurationForm extends CFormModel
 {
-    public $markCreatorAsRead;
+    public $markCreatorAsUnread;
 
     public function rules()
     {
         return array(
-            array('markCreatorAsRead', 'required')
+            array('markCreatorAsUnread', 'required')
         );
     }
 
     public function attributeLabels()
     {
         return array(
-            'markCreatorAsRead' => Yii::t('ConfirmReadMessageModule.widgets_ConfigurationForm', 'Mark the creator as read')
+            'markCreatorAsUnread' => Yii::t('ConfirmReadMessageModule.widgets_ConfigurationForm', 'Mark the creator as unread')
         );
     }
 }

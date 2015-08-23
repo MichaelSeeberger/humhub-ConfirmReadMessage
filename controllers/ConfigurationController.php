@@ -44,13 +44,18 @@ class ConfigurationController extends Controller
             $form->attributes = $_POST['ConfigurationForm'];
 
             if ($form->validate()) {
-                $form->markCreatorAsRead = HSetting::Set('markCreatorAsRead', $form->markCreatorAsRead, 'ConfirmReadMessage');
+                $form->markCreatorAsUnread = HSetting::Set('markCreatorAsUnread', $form->markCreatorAsUnread, 'ConfirmReadMessage');
                 $this->redirect(Yii::app()->createUrl('ConfirmReadMessages/configuration/index'));
             }
         } else {
-            $form->markCreatorAsRead = HSetting::Get('markCreatorAsRead', 'ConfirmReadMessage');
+            $form->markCreatorAsUnread = HSetting::Get('markCreatorAsUnread', 'ConfirmReadMessage');
         }
 
         $this->render('index', array('model' => $form));
+    }
+
+    public static function markCreatorAsUnread()
+    {
+        return HSetting::Get('markCreatorAsRead', 'ConfirmReadMessage') != "0";
     }
 }

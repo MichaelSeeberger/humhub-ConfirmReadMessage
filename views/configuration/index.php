@@ -23,15 +23,15 @@
         <label>
             <?php
             $attributes = array();
-            if ($model->markCreatorAsRead) {
+            if ($model->markCreatorAsUnread != "0") {
                 $attributes['checked'] = 'checked';
             }
             ?>
-            <?php echo $form->checkBox($model, 'markCreatorAsRead', $attributes); ?> <?php
-            echo $model->attributeLabels()['markCreatorAsRead'];
+            <?php echo $form->checkBox($model, 'markCreatorAsUnread', $attributes); ?> <?php
+            echo $model->attributeLabels()['markCreatorAsUnread'];
             ?>
         </label>
-        <?php echo $form->error($model, 'markCreatorAsRead'); ?>
+        <?php echo $form->error($model, 'markCreatorAsUnread'); ?>
     </div>
 
     <hr>
