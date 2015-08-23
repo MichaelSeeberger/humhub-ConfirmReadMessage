@@ -9,6 +9,7 @@ Yii::app()->moduleManager->register(array(
         'application.modules.ConfirmReadMessage.notifications.*',
         'application.modules.ConfirmReadMessage.*',
     ),
+    'configRoute' => '//ConfirmReadMessages/configuration/index',
     // Events to Catch 
     'events' => array(
         array('class' => 'User', 'event' => 'onBeforeDelete', 'callback' => array('ConfirmReadMessageModule', 'onUserDelete')),

@@ -101,4 +101,9 @@ class ConfirmReadMessageModule extends HWebModule
 			));
 		}
 	}
+
+	public function getConfigUrl()
+	{
+		return Yii::app()->createUrl("//ConfirmReadMessages/configuration");
+	}
 }
