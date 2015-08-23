@@ -86,7 +86,7 @@ class ConfirmReadMessageController extends ContentContainerController
 		$pagination->setPageSize($maxPageSize);
 
 		$output = $this->renderPartial(
-			'application.modules.ConfirmReadMessage.views.ConfirmReadMessage._listConfirms',
+			'application.modules.ConfirmReadMessage.views.confirmReadMessage._listConfirms',
 			array(
 				'title' => Yii::t('ConfirmReadMessageModule.controllers_ConfirmReadMessageController', "Users that have read the message"),
 				'confirmations' => $confirmations,
