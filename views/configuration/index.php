@@ -23,7 +23,7 @@
         <label>
             <?php
             $attributes = array();
-            if ($model->markCreatorAsUnread != "0" && $model->markCreatorAsUnread != null) {
+            if ($model->markCreatorAsUnread == "0" || $model->markCreatorAsUnread == null) {
                 $attributes['checked'] = 'checked';
             }
             ?>
