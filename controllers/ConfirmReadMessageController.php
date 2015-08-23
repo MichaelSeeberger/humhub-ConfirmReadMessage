@@ -45,7 +45,9 @@ class ConfirmReadMessageController extends ContentContainerController
 
 		if ($theMessage->validate()) {
 			$theMessage->save();
-			if (HSetting::Get('markCreatorAsUnread', 'ConfirmReadMessage') == "0")
+
+			$markAsUnread = HSetting::Get('markCreatorAsUnread', 'ConfirmReadMessage');
+			if ($markAsUnread == "0" || $markAsUnread == null)
 				$theMessage->confirm();
 
 			$this->renderJson(array('wallEntryId' => $theMessage->content->getFirstWallEntryId()));
