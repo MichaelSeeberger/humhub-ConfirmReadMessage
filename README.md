@@ -18,6 +18,8 @@ If you want to add it as submodule into an existing repository, type
     cd <path to humhub>
     git submodule add https://github.com/MichaelSeeberger/humhub-ConfirmReadMessage.git protected/modules/ConfirmReadMessage
 
+Note: Versions previous to 1.1.2 will not work on servers that use case sensitive file systems. Make sure to get v1.1.2 or later.
+
 ## Localizations
 Localizations are provided for following languages:
 
