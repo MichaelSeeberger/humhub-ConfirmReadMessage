@@ -3,7 +3,7 @@
   "name": "Confirmable Message",
   "description": "Simple messaging system for spaces that allows confirmation",
   "keywords": ["message", "confirm", "confirmation"],
-  "version": "1.1.2",
+  "version": "1.2.1",
   "humhub": {
     "minVersion": "0.11"
   }
