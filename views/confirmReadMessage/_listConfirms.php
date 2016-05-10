@@ -90,7 +90,7 @@
                                             echo " ";
                                         }
 
-                                        echo $interval->i >= 30 ?  $interval->h + 1 : $interval->h . " ";
+                                        echo ($interval->i >= 30 ?  $interval->h + 1 : $interval->h) . " ";
                                         echo Yii::t($translationTable, $interval->h > 1 ? 'hours' : 'hour');
                                     } else if ($interval->i > 0) {
                                         if ($hasPrevious) {
