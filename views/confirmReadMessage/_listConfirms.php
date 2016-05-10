@@ -51,6 +51,58 @@
                                 <?php echo Yii::app()->dateFormatter->formatDateTime($confirmation->created_at, 'medium', false); ?>
                                 <?php echo Yii::t('ConfirmReadMessageModule.views_ConfirmReadMessage__listConfirms', 'at') ?>
                                 <?php echo Yii::app()->dateFormatter->formatDateTime($confirmation->created_at, false, 'medium'); ?>
+                                <small>
+                                    (<?php
+                                    $translationTable = 'ConfirmReadMessageModule.views_ConfirmReadMessage__listConfirms';
+                                    $createdDate = new DateTime($messageCreatedAt);
+                                    $readDate = new DateTime($confirmation->created_at);
+                                    $interval = $createdDate->diff($readDate);
+                                    $hasPrevious = false;
+                                    if ($interval->y > 0) {
+                                        $hasPrevious = true;
+
+                                        echo $interval . " ";
+                                        echo Yii::t($translationTable, $interval->y > 1 ? 'years' : 'year');
+                                    }
+
+                                    if ($interval->m > 0) {
+                                        if ($hasPrevious) {
+                                            echo " ";
+                                        }
+                                        $hasPrevious = true;
+
+                                        echo $interval->m . " ";
+                                        echo Yii::t($translationTable, $interval->m > 1 ? 'months' : 'month');
+                                    }
+
+                                    if ($interval->d > 0) {
+                                        if ($hasPrevious) {
+                                            echo " ";
+                                        }
+                                        $hasPrevious = true;
+
+                                        echo $interval->d . " ";
+                                        echo Yii::t($translationTable, $interval->d > 1 ? 'days' : 'day');
+                                    }
+
+                                    if ($interval->h > 0) {
+                                        if ($hasPrevious) {
+                                            echo " ";
+                                        }
+
+                                        echo $interval->i >= 30 ?  $interval->h + 1 : $interval->h . " ";
+                                        echo Yii::t($translationTable, $interval->h > 1 ? 'hours' : 'hour');
+                                    } else if ($interval->i > 0) {
+                                        if ($hasPrevious) {
+                                            echo " ";
+                                        }
+                                        echo $interval->i . " ";
+                                        echo Yii::t($translationTable, $interval->i > 1 ? 'minutes' : 'minute');
+                                    } else {
+                                        echo "1 " . Yii::t('ConfirmReadMessageModule.views_ConfirmReadMessage__listConfirms', 'minute');
+                                    }
+                                    ?>)
+                                </small>
                             </h5>
                         </div>
                     </div>

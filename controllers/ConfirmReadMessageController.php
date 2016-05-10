@@ -94,6 +94,7 @@ class ConfirmReadMessageController extends ContentContainerController
 			array(
 				'title' => Yii::t('ConfirmReadMessageModule.controllers_ConfirmReadMessageController', "Users that have read the message"),
 				'confirmations' => $confirmations,
+				'messageCreatedAt' => $message->created_at,
 				'pagination' => $pagination
 			)
 		);

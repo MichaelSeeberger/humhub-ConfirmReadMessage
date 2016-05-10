@@ -8,5 +8,15 @@
 
 return array(
     'Read on' => 'Gelesen am',
-    'at' => 'um'
+    'at' => 'um',
+    'year' => 'Jahr',
+    'years' => 'Jahre',
+    'month' => 'Monat',
+    'months' => 'Monate',
+    'day' => 'Tag',
+    'days' => 'Tage',
+    'hour' => 'Stunde',
+    'hours' => 'Stunden',
+    'minute' => 'Minute',
+    'minutes' => 'Minuten'
 );
